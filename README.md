@@ -108,21 +108,23 @@ topic\_id | facet\_id | topic\_facet\_id | topic\_facet\_question\_id | topic | 
 	
 As we see, each record is identified with an ID (`<record_id`) and is a key in the dictionary. Each item in the dictionary is itself a dictionary that consists of a list of past questions and answers exchanged in the conversation, as well as the topic, current question, and the current answer. There is also an item called `history_id` that is a unique identifier for the history. Below we see and example:
 
-	 '18-2-1-2-10-1': {	 'history_id': '18-2-1-2',
-	 'history_list': [{'answer': 'no i just want to find spreadsheets and templates',
-	   'question': 'are you interested in a service for wedding budgeting'},
-	  {'answer': 'yes i want to find some spreadsheets to help me budget',
-	   'question': 'are you looking for advice on wedding budgeting'}],
-	 'query': 'wedding budget calculator',
-	 'question': 'what is your projected budget for your wedding',
-	 'answer': 'i need to find a spreadsheet to figure it out'},
-	 
-	 '25-1-3-8-1' : {	 'history_id': '25-1-3',
-	 'history_list': [{'answer': 'no i am looking for information on the greek mathematician euclid',
-	   'question': 'do you need directions to euclid ave'}],
-	 'query': 'euclid',
-	 'question': 'do you want to know related people',
-	 'answer': 'no i only want to know about one particular person'}
+	 '18-2-1-2-10-1': {	 
+		'history_id': '18-2-1-2',
+		'history_list': [{'answer': 'no i just want to find spreadsheets and templates',
+				'question': 'are you interested in a service for wedding budgeting'},
+				{'answer': 'yes i want to find some spreadsheets to help me budget',
+				'question': 'are you looking for advice on wedding budgeting'}],
+		'query': 'wedding budget calculator',
+		'question': 'what is your projected budget for your wedding',
+		'answer': 'i need to find a spreadsheet to figure it out'},
+
+	'25-1-3-8-1' : {	 
+		'history_id': '25-1-3',
+		'history_list': [{'answer': 'no i am looking for information on the greek mathematician euclid',
+				'question': 'do you need directions to euclid ave'}],
+		'query': 'euclid',
+		'question': 'do you want to know related people',
+		'answer': 'no i only want to know about one particular person'}
 	 
 ### `eval_hist012_dict.pkl`:
 
@@ -133,28 +135,30 @@ This file contains the evaluation results of all possible combinations of questi
 Here is a sample data:
 
 	{'MRR100': {'20-2-1-0': 0.0,
-	  '20-2-1-1': 0.0,
-	  '20-2-10-0': 0.0,
-	  '20-2-10-1': 0.0,
-	  '20-2-11-0': 0.0,
-	  '20-2-11-1': 1.0,
-	  '20-2-12-0': 0.0,
-	  '20-2-12-1': 0.0,
-	  ...},
+		  '20-2-1-1': 0.0,
+		  '20-2-10-0': 0.0,
+		  '20-2-10-1': 0.0,
+		  '20-2-11-0': 0.0,
+		  '20-2-11-1': 1.0,
+		  '20-2-12-0': 0.0,
+		  '20-2-12-1': 0.0,
+		  ...},
 	  
 	 'NDCG20': {'20-2-1-0': 0.0,
-	 '20-2-1-1': 0.0,
-	 '20-2-10-0': 0.0,
-	 '20-2-10-1': 0.0,
-	 '20-2-11-0': 0.0,
-	 '20-2-11-1': 0.36252395084997224,
-	 '20-2-12-0': 0.0,
-	 '20-2-12-1': 0.0,
-	 '20-2-13-0': 0.0,
-	 '20-2-13-1': 0.24356187958225833,
-	 '20-2-14-0': 0.0,
-	 '20-2-14-1': 0.10773341865761957,
-	 ...}
+		 '20-2-1-1': 0.0,
+		 '20-2-10-0': 0.0,
+		 '20-2-10-1': 0.0,
+		 '20-2-11-0': 0.0,
+		 '20-2-11-1': 0.36252395084997224,
+		 '20-2-12-0': 0.0,
+		 '20-2-12-1': 0.0,
+		 '20-2-13-0': 0.0,
+		 '20-2-13-1': 0.24356187958225833,
+		 '20-2-14-0': 0.0,
+		 '20-2-14-1': 0.10773341865761957,
+		 ...},
+	 ...
+	}
 	 
 **NOTE:** Relevant codes and qrel files to reproduce this `dict` will be added to the repository later.
 
@@ -164,18 +168,18 @@ Here is a sample data:
 We have provided the features and representations that we used in [1] for reproducibility. Hence, this file contains a `dict` as follows:
 
 	<record_id> : {
-						'query_facet_id': <same as topic_facet_id in qulac.json>,
-						'query': <BERT representation of the query (topic)>,
-						'question': <BERT represenation of the question>,
-						'history_list': [
-								<BERT representation of the first question answer pair in the context>,
-								<BERT representation of the second question answer pair in the context>,
-								<BERT representation of the third question answer pair in the context>
-								],
-						'history_len': <number of turns in the conversation history (context)>,
-						'scores': <the scores of top ranked documents after running the modified QL using query, history, and question>,
-						'scores_std': <standard deviation of top k scores>
-					}
+			'query_facet_id': <same as topic_facet_id in qulac.json>,
+			'query': <BERT representation of the query (topic)>,
+			'question': <BERT represenation of the question>,
+			'history_list': [
+					<BERT representation of the first question answer pair in the context>,
+					<BERT representation of the second question answer pair in the context>,
+					<BERT representation of the third question answer pair in the context>
+					],
+			'history_len': <number of turns in the conversation history (context)>,
+			'scores': <the scores of top ranked documents after running the modified QL using query, history, and question>,
+			'scores_std': <standard deviation of top k scores>
+		}
 					
 Below we see a sample:
 
