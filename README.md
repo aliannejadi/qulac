@@ -50,11 +50,11 @@ Average terms per answer 		| 8.21
 Below we list the files in the repository:
 
 * `./data/qulac/qulac.json` consists of topics, facets, questions, and answers,
-* `./data/qulac/qulac_hist012_dict.json` is a `dict` consisting of artificially generated conversations of 1, 2, and three turns.
-* `./data/ql_evaluations/eval_hist012_dict.pkl` is a `dict` containing the result of query likelihood (QL) (see [1]) for all artificially generated conversations with and without answers. It consists of 11 evaluation metrics.
+* `./data/qulac/qulac_hist012_dict.tar.gz` is a `dict` consisting of artificially generated conversations of 1, 2, and three turns.
+* `./data/ql_evaluations/eval_hist012_dict.tar.gz` is a `dict` containing the result of query likelihood (QL) (see [1]) for all artificially generated conversations with and without answers. It consists of 11 evaluation metrics.
 * `.data/bert_qpp_features/bert_qpp_dict.pkl` is a `dict` containing BERT representations together with QPP features (see [1]). This file can be used to reproduce the results of [1].
 
-**NOTE:** Since `./data/ql_evaluations/eval_hist012_dict.pkl` and `.data/bert_qpp_features/bert_qpp_dict.pkl` are very large, we have stored them in binary (Pickle) for more efficient IO. Please contact us if you need them in any other formats.
+**NOTE:** Since `./data/ql_evaluations/eval_hist012_dict.tar.gz` and `.data/bert_qpp_features/bert_qpp_dict.pkl` are very large, we have stored them in binary (Pickle) for more efficient IO. Please contact us if you need them in any other formats.
 
 **NOTE:** Due to the size of the files above, we have stored them on external servers. You can find the link to download the files in their respective directories.
   
@@ -126,7 +126,7 @@ As we see, each record is identified with an ID (`record_id`) and is a key in th
 		'question': 'do you want to know related people',
 		'answer': 'no i only want to know about one particular person'}
 	 
-### `eval_hist012_dict.pkl`:
+### `eval_hist012_dict.tar.gz`:
 
 This file contains the evaluation results of all possible combinations of questions and answers with 1, 2, and 3 turns. The retrieval is done using a modified QL model (see [1]) and evaluated on a modified TREC qrel file. The metrics are nDCG@1,3,5,10,20; P@1,3,5,10,20; MRR@100. The dictionary is formatted as follows:
 
@@ -163,7 +163,7 @@ Here is a sample data:
 **NOTE:** Relevant codes and qrel files to reproduce this `dict` will be added to the repository later.
 
 
-### `bert_qpp_dict.pkl`:
+### `bert_qpp_dict.tar.gz`:
 
 We have provided the features and representations that we used in [1] for reproducibility. Hence, this file contains a `dict` as follows:
 
