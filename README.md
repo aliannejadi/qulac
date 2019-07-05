@@ -23,7 +23,7 @@ to get a better understanding of the underlying information need.
 Qulac presents the first dataset and offline evaluation framework for studying clarifying questions in open-domain information-seeking conversational search systems. Below we briefly explain how we collected data and provide further details on the provided data format.
 
 ## Data Collection
-We have built Qulac on top of TREC Web Track 09-12 collections.
+We have built Qulac on top of the TREC Web Track 09-12 collections.
 As such, we collected Qulac following a four-step strategy. In the first
 step, we define the topics and their corresponding facets, which are borrowed from the TREC Web Track. In the
 second step, we collected several candidates clarifying questions for each query through crowdsourcing. Then, in the third step,
@@ -106,7 +106,7 @@ topic\_id | facet\_id | topic\_facet\_id | topic\_facet\_question\_id | topic | 
 	  ....
 	}
 	
-As we see, each record is identified with an ID (`<record_id`) and is a key in the dictionary. Each item in the dictionary is itself a dictionary that consists of a list of past questions and answers exchanged in the conversation, as well as the topic, current question, and the current answer. There is also an item called `history_id` that is a unique identifier for the history. Below we see and example:
+As we see, each record is identified with an ID (`record_id`) and is a key in the dictionary. Each item in the dictionary is itself a dictionary that consists of a list of past questions and answers exchanged in the conversation, as well as the topic, current question, and the current answer. There is also an item called `history_id` that is a unique identifier for the history. Below we see and example:
 
 	 '18-2-1-2-10-1': {	 
 		'history_id': '18-2-1-2',
@@ -271,7 +271,7 @@ To help to decode the ID's we have also provided two simple code snippets that c
 
 ## Citation
 
-Please consider citing our paper if you use Qulac in your research:
+Please consider citing the following paper if you use Qulac in your research:
 
 	@inproceedings{AliannejadiSigir19,
 	    author    = {Aliannejadi, Mohammad and Zamani, Hamed and Crestani, Fabio and Croft, W. Bruce},
@@ -284,10 +284,9 @@ Please consider citing our paper if you use Qulac in your research:
   	
 ## Acknowledgments
 
-This work was a joint effort by Università della Svizzera italiana (USI), Lugano, Switzerland and University of Massachusetts Amherst, Amherst, MA, USA. Thanks to Mohammad Aliannejadi, Hamed Zamani, Fabio Crestani and W. Bruce Croft for their efforts in developing this dataset.
-Finally, we would like to thank the expert annotators and crowd workers for their invaluable help in creating Qulac.
+This work was a joint effort by Università della Svizzera italiana (USI), Lugano, Switzerland and University of Massachusetts, Amherst, MA, USA. Thanks to the expert annotators and crowd workers for their invaluable help in annotating Qulac.
   
   
 ## References
 
-[1] M. Aliannejadi, H. Zamani, F. Crestani, and W. B. Croft, Asking Clarifying Questions in Open-Domain Information-Seeking Conversations, International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR), Paris, France, 2019.
+[1] M. Aliannejadi, H. Zamani, F. Crestani, and W. B. Croft, "Asking Clarifying Questions in Open-Domain Information-Seeking Conversations", In proceedings of the 42nd International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '19), Paris, France, 2019.
