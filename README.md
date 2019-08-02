@@ -1,6 +1,8 @@
 # Qulac
 A dataset on asking Questions for Lack of Clarity in open-domain information-seeking conversations.
 
+**\*\*\*\*\*\*\*\* New August 2nd, 2019: Links to auxiliary data added \*\*\*\*\*\*\*\***
+
 ## Introduction
 While searching on the Web, users often fail to formulate their
 complex information needs in a single query. As a consequence, they
@@ -58,6 +60,7 @@ Below we list the files in the repository:
 
 **NOTE:** Due to the size of the files above, we have stored them on external servers. You can find the link to download the files in their respective directories.
   
+**NOTE:** All dataset files can be uploaded [here](http://ciir.cs.umass.edu/downloads/qulac/).
 
 ## File Format
 
