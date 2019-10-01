@@ -60,7 +60,7 @@ Below we list the files in the repository:
 
 **NOTE:** Due to the size of the files above, we have stored them on external servers. You can find the link to download the files in their respective directories.
   
-**NOTE:** All dataset files can be uploaded [here](http://ciir.cs.umass.edu/downloads/qulac/).
+**NOTE:** All dataset files can be downloaded [here](http://ciir.cs.umass.edu/downloads/qulac/).
 
 ## File Format
 
