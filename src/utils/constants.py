@@ -39,13 +39,6 @@ new_q_cols = ['Answer.new_question_{}'.format(x) for x in range(max_facets_per_t
 
 initial_cols = ['WorkerId', 'WorkTimeInSeconds','Input.topic_id', 'Input.query']
 
-# for aws api
-aws_region_name = 'us-east-1'
-aws_access_key_id = 'AKIAJAJQ6ZEHQFOSQNUA'
-aws_secret_access_key = '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'
-aws_endpoint_url = 'https://mturk-requester.us-east-1.amazonaws.com'
-aws_client_name = 'mturk'
-
 # evaluation
 runs_path = 'runs/'
 eval_temp_path = 'tmp/'
