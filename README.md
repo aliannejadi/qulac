@@ -1,6 +1,8 @@
 # Qulac
 A dataset on asking Questions for Lack of Clarity in open-domain information-seeking conversations.
 
+**\*\*\*\*\*\*\*\* New October 12th, 2019: Document retrieval code added \*\*\*\*\*\*\*\***
+
 **\*\*\*\*\*\*\*\* New August 2nd, 2019: Links to auxiliary data added \*\*\*\*\*\*\*\***
 
 ## Introduction
@@ -270,6 +272,17 @@ To help to decode the ID's we have also provided two simple code snippets that c
 	    for k in range(2,2+len(tokens)-4):    
 	        hisotry_ids += (tokens[k],)
 	    return topic_id, facet_id, hisotry_ids, question_id, with_ans
+
+## Code
+We have released the source code of the document retrieval component. As mentioned in [1], the retrieval model is an extension of the query likelihood (QL) model, where we give different weights to the original query and question and answer text.
+
+The code is available under `./src/` directory. The main retrieval model can be found in `QL.py` file where it uses Cython function `ql_score` to calcuate the relevance score faster. Therefore, before running the code, you must compile and build the Cython package `ql_score` on your device. 
+
+**Build Cython package:** To build the Cython package on your device, please go to `./src/ql_score/` and run the following command: `python setup.py build_ext --inplace`
+
+Furthermore, our code uses the custom index that we have built (and is available [here](http://ciir.cs.umass.edu/downloads/qulac/)), as well as ClueWeb term statistics file that is also available [here](http://ciir.cs.umass.edu/downloads/qulac/). The file `run_QL.ipynb` provides a Jupyter Notebook example of how to execute a query.
+
+**NOTE:** The index is build using Krovetz stemmer. Therefore, in order to replicate the results of [1], you need to install the Krovetz Stemmer on your machine and use it in your own code. Once you install the stemmer, please modify `./src/utils/utils.py` file to use the stemmer as its default stemmer. To do so, follow the `TODO` comments in the file.
 		
 
 ## Citation
